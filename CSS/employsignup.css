@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 620px;
+    background-image: url('https://images.unsplash.com/photo-1601370690183-1c7796ecec61?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JlZW4lMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D');
+}
+
+.login-box {
+    background-color: rgba(0, 128, 0, 0.333); /* Green theme */
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    color: white;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+}
+
+.login-box input[type="submit"] {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-box input[type="submit"]:hover {
+    background-color: darkgreen;
+}
+
+.login-box input[type="text"]:focus, .login-box input[type="password"]:focus {
+    outline: none;
+    border: 2px solid #4CAF50;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}

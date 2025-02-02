@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="/CSS/addemploye.css">
+  <link rel="stylesheet" href="/CSS/AdminHome.css">
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">Trash Tag</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Collected</a></li>
+        <li><a href="#">Not Collected</a></li>
+        <li><a href="#">Employees</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span>&#9776;</span>
+      </div>
+    </nav>
+  </header>
+ 
+ <div class="form">
+  <div class="form-container">
+    <h2 class="add">Add Employee</h2>
+    
+    <form id="registrationForm" onsubmit="addEmployeeData();">
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username" required><br>
+      <small id="usernameError" class="error"></small><br>
+
+      <label for="userId">User ID:</label><br>
+      <input type="text" id="userId" name="userId" required><br>
+      <small id="userIdError" class="error"></small><br>
+
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" required><br>
+      <small id="passwordError" class="error"></small><br>
+
+      <label for="confirmPassword">Confirm Password:</label><br>
+      <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+      <small id="confirmPasswordError" class="error"></small><br>
+
+      <label for="district">District:</label><br>
+      <select id="district" name="district" onchange="updatePanchayathOptions()" required>
+        <option value="">Select a district</option>
+        <option value="District1">District 1</option>
+        <option value="District2">District 2</option>
+        <option value="District3">District 3</option>
+      </select><br>
+      <small id="districtError" class="error"></small><br>
+
+      <label for="panchayath">Panchayath:</label><br>
+      <select id="panchayath" name="panchayath" required>
+        <option value="">Select a panchayath</option>
+      </select><br>
+      <small id="panchayathError" class="error"></small><br>
+
+      <!-- Ward Number Input -->
+      <label for="wardNumber">Ward Number:</label><br>
+      <input type="number" id="wardNumber" name="wardNumber" required min="1" max="100"><br>
+      <small id="wardNumberError" class="error"></small><br>
+
+      <button   type="submit">Submit</button>
+    </form>
+  </div>
+  
+
+ </div>
+</body>
+<script>
+  // Initialize Firebase with your config object
+const firebaseConfig = {
+  apiKey: "AIzaSyDErtislsLPoIk2YmgdytwXBHqkmszdFbw",
+  authDomain: "sample-firebase-ai-app-f4a3c.firebaseapp.com",
+  projectId: "sample-firebase-ai-app-f4a3c",
+  storageBucket: "sample-firebase-ai-app-f4a3c.firebasestorage.app",
+  messagingSenderId: "337069964031",
+  appId: "1:337069964031:web:6cfe479df35c67ba45aaca"
+};
+
+// Initialize Firebase App
+const app = firebase.initializeApp(firebaseConfig);
+
+// Initialize Firestore using compat SDK
+const db = firebase.firestore(app);
+
+</script>
+<script src="/JS/addemploye.js"></script>
+<script src="/JS/employesignup.js"></script>
+</html>

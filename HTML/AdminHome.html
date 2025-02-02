@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdminHome</title>
+    <link rel="stylesheet" href="/CSS/AdminHome.css" />
+    <script defer src="/JS/AdminHome.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore-compat.js"></script>
+    <script src="/JS/dbconnection.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="#">Trash Tag</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Collected</a></li>
+          <li><a href="#">Not Collected</a></li>
+          <li><a href="/HTML/employees.html">Employees</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+          <span>&#9776;</span>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <button class="btn btn-collected">Collected</button>
+        <button class="btn btn-notcollected">Not Collected</button>
+      </div>
+      <div class="row">
+        <button onclick="anotherpage()" class="btn center-btn">
+          Employees
+        </button>
+      </div>
+    </div>
+  </body>
+
+</html>

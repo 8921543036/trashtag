@@ -1,0 +1,50 @@
+.container {
+    margin: 20px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .input-cell select, .input-cell input {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .input-cell input {
+    margin-top: 5px;
+  }
+
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: #45a049;
+  }
