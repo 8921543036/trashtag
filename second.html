@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="second.css">
+    <script src="/JS/AdminHome.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Trash Tag</a>
+            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <div class="hamburger" id="hamburgerBtn">&#9776;</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/second.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/cntct.html">contact us</a></li>
+                <!-- Removed Login Button from Navbar -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to Trash Tag</h1>
+        <p>Track the trash collection status with ease!</p>
+        
+        <!-- Main Login Button -->
+        <a href="#" class="btn-login" id="loginBtn">Login</a>
+
+        <!-- Employee and User Login Buttons (Initially Hidden) -->
+        <div class="login-options" id="loginOptions" style="display: none;">
+            <a href="/login.html" class="btn-employee">Employee Login</a>
+            <a href="/login.html" class="btn-user">User Login</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle Employee and User buttons
+        document.getElementById('loginBtn').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default link behavior
+            var loginOptions = document.getElementById('loginOptions');
+            // Toggle visibility of the login options
+            if (loginOptions.style.display === 'none') {
+                loginOptions.style.display = 'block';
+            } else {
+                loginOptions.style.display = 'none';
+            }
+        });
+
+        // JavaScript for Mobile Menu Toggle
+        document.getElementById('hamburgerBtn').addEventListener('click', function() {
+            var navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active'); // Toggle the 'active' class to show/hide links
+        });
+    </script>
+</body>
+</html>
