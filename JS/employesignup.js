@@ -28,3 +28,6 @@ function validateForm() {
 
     return isValid;
 }
+function gotohomepage(){
+    window.location.href = "/HTML/AdminHome.html";
+}

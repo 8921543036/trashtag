@@ -55,45 +55,37 @@ function searchTable() {
   }
 }
 
-function addEmployeeData() {
-  console.log(db);
 
-  // Get the values from input fields
-  const username = document.getElementById("username").value;
-  const district = document.getElementById("district").value;
-  const panchayath = document.getElementById("panchayath").value;
-  const wardNumber = document.getElementById("wardNumber").value;
 
-  console.log("Username: ", username);
+function gettingemployees(docId) {
+  const docRef = db.collection("Employees").doc(docId); // Reference to the document
 
-  // Add data to Firestore if the fields are not empty
-  function getNameById(docId) {
-    const docRef = db.collection("Employees").doc(docId); // Reference to the document
-
-    docRef
-      .get()
-      .then((docSnapshot) => {
-        if (docSnapshot.exists) {
-          // Get only the 'name' field
-          Name = docSnapshot.data().name;
-          district = docSnapshot.data().district;
-          panjayath = docSnapshot.data().panchayath;
-          ward = documentId.data().ward;
-          console.log("Employee Name:", Name);
-        } else {
-          console.log("No document found with the provided ID");
-        }
-      })
-      .catch((error) => {
-        console.error("Error getting document:", error);
-      });
-  }
+  docRef
+    .get()
+    .then((docSnapshot) => {
+      if (docSnapshot.exists) {
+        // Get only the 'name' field
+        Name = docSnapshot.data().name;
+        district = docSnapshot.data().district;
+        panchayath = docSnapshot.data().panchayath;
+        wardNumber = documentId.data().ward;
+        console.log("Employee Name:", Name);
+      } else {
+        console.log("No document found with the provided ID");
+      }
+    })
+    .catch((error) => {
+      console.error("Error getting document:", error);
+    });
 }
 
-// Call the function with a sample document ID
-getNameById(1);
+gettingemployees(1)
 
-let empCount = 0; // To track the number of employee rows.
+
+
+
+// Call the function with a sample document ID
+
 
 function addRow() {
   // Increment the employee count to create a unique ID for the new row
@@ -106,13 +98,13 @@ function addRow() {
   // Create the cells for the new row
   newRow.innerHTML = `
     <td> ${Name}</td>
-    <td>${Id}</td>
-    <td>District ${district}</td>
-    <td>Panchayath ${Panjayath}</td>
+    <td>${docIdId}</td>
+    <td> ${district}</td>
+    <td>${Panjayath}</td>
+    <td>${ wardNumber}</td>
     <td>
       <button onclick="updateEmployee(${empCount})">Update</button>
       <i class="fas fa-trash-alt delete-icon" onclick="deleteEmployee(${empCount})"></i>
-      <i class="fas fa-edit edit-icon" onclick="editEmployee(${empCount})"></i>
     </td>
   `;
 
@@ -128,30 +120,9 @@ function deleteEmployee(id) {
   const row = document.getElementById("emp" + id);
   row.parentNode.removeChild(row);
 }
-
-function editEmployee(id) {
-  alert(`Editing employee with ID: ${id}`);
+function addEmployeePage(){
+  window.location.href = "/HTML/addemploy.html";
 }
 
-function getDocumentByName(idvalue) {
-  const collectionRef = db.collection("employees");
 
-  collectionRef
-    .where("id", "==", idvaluea)
-    .get()
-    .then((querySnapshot) => {
-      if (!querySnapshot.empty) {
-        querySnapshot.forEach((doc) => {
-          console.log("Document found:", doc.id, doc.data());
-        });
-      } else {
-        console.log(idvalue);
-      }
-    })
-    .catch((error) => {
-      console.error("Error getting documents:", error);
-    });
-}
 
-// Example usage
-getDocumentByName(1);

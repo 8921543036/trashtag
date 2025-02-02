@@ -21,13 +21,13 @@ header {
 .container {
     text-align: center;
     padding: 10px;
-    color: #103a57;
+    color: #edf0f2;
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full height to center the content */
-    background-image: url(harithw.jpg);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.54),rgba(0, 0, 0, 0.574)),url(harithw.jpg);
     background-size: cover;
 }
 
