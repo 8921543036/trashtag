@@ -88,8 +88,13 @@ function getDocumentByName(idvalue) {
     console.error("Error getting documents:", error);
   });
 }
+id=1;
 
+function rowaddingloop(){
 
+  addRow(id);
+  id=id+1;
+}
 // Example usage
 getDocumentByName(1); 
 function addRow(id) {
@@ -100,11 +105,11 @@ function addRow(id) {
     <td>${Name}</td>
     <td>${id}</td>
     <td> ${district}</td>
-    <td>Panchayath A${empCount}</td>
+    <td>${panjayath}</td>
+    <td>${ward}</td>
     <td>
       <button onclick="updateEmployee(${empCount})">Update</button>
       <i class="fas fa-trash-alt delete-icon" onclick="deleteEmployee(${empCount})"></i>
-      <i class="fas fa-edit edit-icon" onclick="editEmployee(${empCount})"></i>
     </td>
   `;
 
