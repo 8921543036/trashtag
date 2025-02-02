@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbered Buttons and Form</title>
+    <link rel="stylesheet" href="page.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <!-- Search Box -->
+            <input type="text" id="searchBox" placeholder="Search button number..." onkeyup="searchButtons()">
+            
+            <!-- Container for dynamically created buttons -->
+            <div id="buttonContainer"></div>
+        </div>
+        
+        <div class="right-section">
+            <!-- Form with Check-in and Check-out buttons -->
+            <form id="checkoutForm">
+                <button type="button" id="checkinBtn">Check-in</button>
+                <button type="button" id="checkoutBtn">Check-out</button>
+                
+                <!-- Reason column will appear here after click on Check-out -->
+                <div id="reasonColumn" class="hidden">
+                    <label for="reason">Reason:</label>
+                    <textarea id="reason" rows="4" cols="50"></textarea>
+                </div>
+
+                <!-- Submit button added below -->
+                <button type="submit" id="submitBtn">Submit</button>
+            </form>
+
+            <!-- Display clicked button number -->
+            <div id="clickedButtonDisplay">No button clicked yet</div>
+        </div>
+    </div>
+
+    <script src="page.js"></script>
+</body>
+</html>
