@@ -1,14 +1,13 @@
-# [Project Name] 🎯
+# Trash Tag 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Codex
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Muhsina KK - EMEA College of Arts and Science
+- Member 2: fathima Nasrin C- EMEA College of Arts and Science
 
 ### Hosted Project Link
 [mention your project hosted project link here]

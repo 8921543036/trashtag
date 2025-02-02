@@ -1,5 +1,6 @@
 function validateForm() {
   // Clear previous errors
+  console.log('hhhhh');
   document.getElementById("usernameError").textContent = "";
   document.getElementById("userIdError").textContent = "";
   document.getElementById("passwordError").textContent = "";

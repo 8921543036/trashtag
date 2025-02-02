@@ -31,7 +31,7 @@
   <div class="form-container">
     <h2 class="add">Add Employee</h2>
     
-    <form method="get" id="registrationForm" onsubmit="addEmployeeData(); rowaddingloop(); validateForm();">
+    <form method="get" id="registrationForm" onsubmit="addEmployeeData()">
       <label for="username">Username:</label><br>
       <input type="text" id="username" name="username" required><br>
       <small id="usernameError" class="error"></small><br>
@@ -68,7 +68,7 @@
       <input type="number" id="wardNumber" name="wardNumber" required min="1" max="100"><br>
       <small id="wardNumberError" class="error"></small><br>
 
-      <button   type="submit">Submit</button>
+      <button  >Submit</button>
     </form>
   </div>
   

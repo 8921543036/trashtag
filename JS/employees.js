@@ -1,11 +1,10 @@
-
 function updateEmployee(employeeId) {
   alert("Updating employee with ID: " + employeeId);
 }
 
 // Function to handle the delete action
 function deleteEmployee(employeeId) {
-  const row = document.getElementById('emp' + employeeId);
+  const row = document.getElementById("emp" + employeeId);
   if (row) {
     row.remove(); // Remove the row from the table
     alert("Employee with ID: " + employeeId + " has been deleted.");
@@ -14,7 +13,7 @@ function deleteEmployee(employeeId) {
 
 // Function to handle the edit action
 function editEmployee(employeeId) {
-  const row = document.getElementById('emp' + employeeId);
+  const row = document.getElementById("emp" + employeeId);
   if (row) {
     const cells = row.getElementsByTagName("td");
     const name = cells[0].textContent;
@@ -22,7 +21,16 @@ function editEmployee(employeeId) {
     const district = cells[2].textContent;
     const panchayath = cells[3].textContent;
 
-    alert("Edit employee details:\nName: " + name + "\nID: " + id + "\nDistrict: " + district + "\nPanchayath: " + panchayath);
+    alert(
+      "Edit employee details:\nName: " +
+        name +
+        "\nID: " +
+        id +
+        "\nDistrict: " +
+        district +
+        "\nPanchayath: " +
+        panchayath
+    );
   }
 }
 
@@ -37,7 +45,7 @@ function searchTable() {
   for (let i = 1; i < rows.length; i++) {
     const cells = rows[i].getElementsByTagName("td");
     const id = cells[1].textContent.toLowerCase();
-    
+
     // Check if the ID contains the search query
     if (id.indexOf(filter) > -1) {
       rows[i].style.display = "";
@@ -47,66 +55,53 @@ function searchTable() {
   }
 }
 
-function addEmployeePage(){
-    window.location.href = "/HTML/addemploy.html";
+
+
+function gettingemployees(docId) {
+  const docRef = db.collection("Employees").doc(docId); // Reference to the document
+
+  docRef
+    .get()
+    .then((docSnapshot) => {
+      if (docSnapshot.exists) {
+        // Get only the 'name' field
+        Name = docSnapshot.data().name;
+        district = docSnapshot.data().district;
+        panchayath = docSnapshot.data().panchayath;
+        wardNumber = documentId.data().ward;
+        console.log("Employee Name:", Name);
+      } else {
+        console.log("No document found with the provided ID");
+      }
+    })
+    .catch((error) => {
+      console.error("Error getting document:", error);
+    });
 }
 
-let empCount = 1; // To track the number of employee rows.
+gettingemployees(1)
 
 
-function updateEmployee(id) {
-  alert(`Updating employee with ID: ${id}`);
-}
-
-function deleteEmployee(id) {
-  const row = document.getElementById('emp' + id);
-  row.parentNode.removeChild(row);
-}
-
-function editEmployee(id) {
-  alert(`Editing employee with ID: ${id}`);
-}
 
 
-function getDocumentByName(idvalue) {
-  const collectionRef = db.collection("employees");
+// Call the function with a sample document ID
 
-  collectionRef.where("ID", "==", idvalue).get().then((querySnapshot) => {
-    if (!querySnapshot.empty) {
-      querySnapshot.forEach((doc) => {
-         data = doc.data();
-         Name = data.Name;  // Assuming 'name' is a field in your document
-         district = data.district;
-         panjayath = data.panjayath;
-         ward = data.Ward;
-       
-      });
-    } else {
-      console.log("No document found with the ID:", idvalue);
-    }
-  }).catch((error) => {
-    console.error("Error getting documents:", error);
-  });
-}
-id=1;
 
-function rowaddingloop(){
+function addRow() {
+  // Increment the employee count to create a unique ID for the new row
+  empCount++;
 
-  addRow(id);
-  id=id+1;
-}
-// Example usage
-getDocumentByName(1); 
-function addRow(id) {
- 
+  // Create a new row element
+  let newRow = document.createElement("tr");
+  newRow.id = "emp" + empCount;
 
   // Create the cells for the new row
   newRow.innerHTML = `
-    <td>${Name}</td>
-    <td>${id}</td>
+    <td> ${Name}</td>
+    <td>${docIdId}</td>
     <td> ${district}</td>
-    <td>${panjayath}</td>
-    <td>${ward}</td>
+    <td>${Panjayath}</td>
+    <td>${ wardNumber}</td>
     <td>
       <button onclick="updateEmployee(${empCount})">Update</button>
       <i class="fas fa-trash-alt delete-icon" onclick="deleteEmployee(${empCount})"></i>
@@ -114,5 +109,20 @@ function addRow(id) {
   `;
 
   // Append the new row to the table
-  document.querySelector('#employeeTable tbody').appendChild(newRow);
+  document.querySelector("#employeeTable tbody").appendChild(newRow);
 }
+
+function updateEmployee(id) {
+  alert(`Updating employee with ID: ${id}`);
+}
+
+function deleteEmployee(id) {
+  const row = document.getElementById("emp" + id);
+  row.parentNode.removeChild(row);
+}
+function addEmployeePage(){
+  window.location.href = "/HTML/addemploy.html";
+}
+
+
+
