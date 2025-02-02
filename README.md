@@ -13,18 +13,18 @@
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+A Website to harithasena kerala to mark houses which collected and not collected plastic waste from each wards of panjayath and admins can see distribution of collected and not collected houses
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+The distrubution of houses which collected waste or not collected
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+This website can mark the employe can mark collected or not collected houses userfriendly and admins can see distributions
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
+- Html,CSS,JAVASCRIPT,FIREBASE
 - [Frameworks used]
 - [Libraries used]
 - [Tools used]
